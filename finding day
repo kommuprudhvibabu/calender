@@ -1,0 +1,103 @@
+#include <stdio.h>
+int main()
+{
+    int da, m, y, a, b, c, d, e, f, g, p, q;
+    printf("enter the date/month/year\n");
+    scanf("%d%d%d", &da, &m, &y);
+       a = y - 1;
+        b = a % 400;
+        c = b % 100;
+        d = (b - c) / 100;
+        e = c / 4;
+        f = c - e;
+        g = (2 * e + f + 5 * d)%7;
+   if (m == 1)
+        p = 0;
+    else if (m == 2)
+        p = 3;
+    else if (m == 3)
+    {
+        if (((y % 4 )|| (y % 400 ))== 0)
+            p = 4;
+        else
+            p = 3;
+    }
+    else if (m == 4)
+    {
+        if (((y % 4 )|| (y % 400) )== 0)
+            p = 7;
+        else
+            p = 6;
+    }
+    else if (m == 5)
+    {
+        if (((y % 4) || (y % 400 ))== 0)
+            p = 9;
+        else
+            p = 8;
+    }
+    else if (m == 6)
+    {
+        if (((y % 4 )|| (y % 400 ))== 0)
+            p = 12;
+        else
+            p = 11;
+    }
+    else if (m == 7)
+    {
+        if (((y % 4 )|| (y % 400)) == 0)
+            p = 14;
+        else
+            p = 13;
+    }
+    else if (m == 8)
+    {
+        if (((y % 4 )|| (y % 400)) == 0)
+            p = 17;
+        else
+            p = 16;
+    }
+    else if (m == 9)
+    {
+        if (((y % 4 )|| (y % 400)) == 0)
+            p = 20;
+        else
+            p = 19;
+    }
+    else if (m == 10)
+    {
+        if (((y % 4) ||(y % 400 ))== 0)
+            p = 22;
+        else
+            p = 21;
+    }
+    else if (m == 11)
+    {
+        if(((y % 4 )|| (y % 400 ))== 0)
+            p = 25;
+        else
+            p = 24;
+    }
+    else
+    {
+        if (((y % 4) || (y % 400 ))== 0)
+            p = 27;
+        else
+            p = 26;
+    }
+    q = (g + p + da)%7;
+    if(q==0)
+    printf("%d/%d/%d is SUNDAY",da,m,y);
+      else if(q==1)
+    printf("%d/%d/%d is MONDAY",da,m,y);
+      else if(q==2)
+    printf("%d/%d/%d is TUESDAY",da,m,y);
+      else if(q==3)
+    printf("%d/%d/%d is WEDNESDAY",da,m,y);
+      else if(q==4)
+    printf("%d/%d/%d is THURSDAY",da,m,y);
+      else if(q==5)
+    printf("%d/%d/%d is FRIDAY",da,m,y);
+      else
+    printf("%d/%d/%d is SATURDAY ",da,m,y);
+}
